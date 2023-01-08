@@ -1,0 +1,33 @@
+enum PaymentMethods {
+  CREDIT
+  DEBIT
+  CASH
+}
+
+enum Categories {
+  GROCERIES
+  FOOD
+  CLOTHS
+  CATS
+  HOUSE
+}
+
+type TransactionDetail {
+  id: ID
+  quantity: Int
+  name: String
+  value: Int
+}
+
+type Transaction {
+  source: String
+  value: Int
+  date: String
+  paymentMethod: PaymentMethods
+  category: Categories
+  details: [TransactionDetail]
+}
+
+type Query {
+  getTransactions: [Transaction]
+}
